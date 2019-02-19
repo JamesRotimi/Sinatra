@@ -9,6 +9,13 @@ get '/secret' do
   'we be up in this club'
 end
 
-get '/cat' do
+get '/random-cat' do
+  @name = %w(James Kate Ben).sample
   erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  erb :index
 end
